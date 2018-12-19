@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.15" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.9"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MainVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="WeatherMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0iW-qR-FMr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="I8D-Ce-xgu"/>
+                                </connections>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgU-Za-UwX" customClass="MyCustomPullUpView" customModule="WeatherMap" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="8u8-CB-kpK"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmC-PP-iEo">
+                                <rect key="frame" x="279" y="120" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="nef-hp-CdF"/>
+                                    <constraint firstAttribute="width" secondItem="FmC-PP-iEo" secondAttribute="height" multiplier="1:1" id="tHG-x7-d2R"/>
+                                </constraints>
+                                <state key="normal" image="center"/>
+                                <connections>
+                                    <action selector="centerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zaR-Bc-vix"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUS-dh-M3M">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double tap on any location to get the weather data" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWi-yI-GoK">
+                                        <rect key="frame" x="10" y="49.5" width="355" height="46.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="DWi-yI-GoK" firstAttribute="centerX" secondItem="JUS-dh-M3M" secondAttribute="centerX" id="Gyo-hI-mIS"/>
+                                    <constraint firstAttribute="bottom" secondItem="DWi-yI-GoK" secondAttribute="bottom" constant="4" id="Soz-lu-CiW"/>
+                                    <constraint firstItem="DWi-yI-GoK" firstAttribute="leading" secondItem="JUS-dh-M3M" secondAttribute="leading" constant="10" id="Vyn-m5-y8o"/>
+                                    <constraint firstAttribute="height" constant="100" id="yV0-b5-LYs"/>
+                                    <constraint firstAttribute="trailing" secondItem="DWi-yI-GoK" secondAttribute="trailing" constant="10" id="zS2-e2-rez"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rgU-Za-UwX" firstAttribute="top" secondItem="0iW-qR-FMr" secondAttribute="bottom" id="APh-Mb-UR3"/>
+                            <constraint firstItem="0iW-qR-FMr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="BTC-tF-oTt"/>
+                            <constraint firstItem="JUS-dh-M3M" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Dkm-5k-Gqi"/>
+                            <constraint firstItem="JUS-dh-M3M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gcm-KX-xsz"/>
+                            <constraint firstItem="JUS-dh-M3M" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="HdF-vS-wuu"/>
+                            <constraint firstItem="0iW-qR-FMr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LO8-JW-pmw"/>
+                            <constraint firstItem="0iW-qR-FMr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="PRM-iv-Xc9"/>
+                            <constraint firstItem="rgU-Za-UwX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YwC-87-N0r"/>
+                            <constraint firstItem="FmC-PP-iEo" firstAttribute="top" secondItem="JUS-dh-M3M" secondAttribute="bottom" constant="20" id="jPR-Ks-09B"/>
+                            <constraint firstItem="rgU-Za-UwX" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="nL3-7h-bGF"/>
+                            <constraint firstItem="rgU-Za-UwX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="une-67-7Ax"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FmC-PP-iEo" secondAttribute="trailing" constant="16" id="yVc-Yj-02j"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="0iW-qR-FMr" id="Yaf-kP-cLH"/>
+                        <outlet property="pullUpView" destination="rgU-Za-UwX" id="W1C-96-KoD"/>
+                        <outlet property="pullupviewHeightLayout" destination="8u8-CB-kpK" id="buV-ig-DQf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="center" width="512" height="512"/>
+    </resources>
+</document>
